@@ -21,6 +21,7 @@ const App = (props) => {
       if (drizzle_state.drizzleStatus.initialized) {
         // this.setState({ loading: false, drizzle_state })
         setIsLoading(false)
+        // console.log(drizzle_state)
         setDrizzleState(drizzle_state)
       }
     })
@@ -49,14 +50,11 @@ const App = (props) => {
         
         <br />
         
-        {isLoading ? 
-          <div>Loading ReadString...</div>
-        :
-          <ReadString
-            drizzle={drizzle}
-            drizzleState={drizzleState}
-          />
-        }
+        <ReadString
+          isLoading={isLoading}
+          drizzle={drizzle}
+          drizzleState={drizzleState}
+        />
       </header>
     </div>
   )
