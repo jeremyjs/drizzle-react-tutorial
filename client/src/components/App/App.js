@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import ReadString from './ReadString'
+import { ReadString, SetString } from '../../components'
 import logo from './logo.svg'
 import './App.css'
 
-const App = (props) => {
+export const App = (props) => {
   const { drizzle } = props
 
   // const state = { loading: true, drizzle_state: null }
@@ -52,6 +52,10 @@ const App = (props) => {
         
         <ReadString
           isLoading={isLoading}
+          drizzle={drizzle}
+          drizzleState={drizzleState}
+        />
+        <SetString
           drizzle={drizzle}
           drizzleState={drizzleState}
         />
